@@ -3,6 +3,7 @@
 const express = require('express');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
+const port = process.env.PORT || 3001;
 
 const app = express();
 
@@ -55,4 +56,6 @@ app.use(function(req, res){
     res.status(400).send("URL does not exist!");
 });
 
-app.listen(3001);
+app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${port}`)
+})
